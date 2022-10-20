@@ -1,7 +1,8 @@
 package se.stadafint.nicecleaning_backend.services;
 
-import se.stadafint.nicecleaning_backend.model.User;
+
 import org.springframework.stereotype.Service;
+import se.stadafint.nicecleaning_backend.model.User;
 import se.stadafint.nicecleaning_backend.repo.UserRepo;
 
 @Service
