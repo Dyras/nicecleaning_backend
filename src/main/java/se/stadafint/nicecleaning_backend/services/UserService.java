@@ -4,8 +4,6 @@ import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 import se.stadafint.nicecleaning_backend.repo.UserRepo;
 
-import java.util.List;
-
 @Service
 public class UserService {
     private final UserRepo userRepo;
