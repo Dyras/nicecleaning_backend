@@ -1,13 +1,12 @@
 package se.stadafint.nicecleaning_backend.controller;
 
-import org.apache.catalina.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import se.stadafint.nicecleaning_backend.entities.User;
+import org.springframework.web.bind.annotation.*;
 import se.stadafint.nicecleaning_backend.services.UserService;
 
 @RestController
 @RequestMapping("/api/user")
+@CrossOrigin(origins = {"http://localhost:3000"}, methods = {RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST})
 public class UserController {
 
     private final UserService userService;

@@ -1,8 +1,9 @@
-package se.stadafint.nicecleaning_backend.model;
+package se.stadafint.nicecleaning_backend.entities;
 
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
+
 @Entity
 public class User {
 

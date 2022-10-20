@@ -1,6 +1,6 @@
 package se.stadafint.nicecleaning_backend.services;
 
-import org.apache.catalina.User;
+import se.stadafint.nicecleaning_backend.entities.User;
 import org.springframework.stereotype.Service;
 import se.stadafint.nicecleaning_backend.repo.UserRepo;
 

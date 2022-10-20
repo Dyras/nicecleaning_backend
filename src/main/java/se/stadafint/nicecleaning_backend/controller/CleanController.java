@@ -4,7 +4,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import se.stadafint.nicecleaning_backend.entities.Clean;
 import se.stadafint.nicecleaning_backend.services.CleanService;
+
+import java.util.Date;
 
 @RestController
 @RequestMapping("/api/clean")
@@ -15,5 +18,9 @@ public class CleanController {
 
     public CleanController(CleanService cleanService){
         this.cleanService = cleanService;
+    }
+
+    public Clean cleanDuplicateCheck(Date date, int id){
+        return cleanService.cleanDuplicateCheck(date, id);
     }
 }

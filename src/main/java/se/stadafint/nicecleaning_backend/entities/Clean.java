@@ -1,4 +1,4 @@
-package se.stadafint.nicecleaning_backend.model;
+package se.stadafint.nicecleaning_backend.entities;
 
 import javax.persistence.*;
 import java.sql.Time;
@@ -17,20 +17,15 @@ public class Clean {
     @Column(nullable = false)
     private Time time;
 
-    @Column(nullable = true)
-    private String optionalDescription;
-
     @Column(nullable = false)
-    private boolean completed;
+    private boolean completed = false;
 
     @ManyToOne
     private User user;
 
-    public Clean(int id, Date date, Time time, String optionalDescription, boolean completed, User user) {
-        this.id = id;
+    public Clean(Date date, Time time, boolean completed, User user) {
         this.date = date;
         this.time = time;
-        this.optionalDescription = optionalDescription;
         this.completed = completed;
         this.user = user;
     }
@@ -38,8 +33,23 @@ public class Clean {
     public Clean(){
 
     }
+    public int getId() {
+        return id;
+    }
 
+    public Date getDate() {
+        return date;
+    }
 
+    public Time getTime() {
+        return time;
+    }
 
+    public boolean isCompleted() {
+        return completed;
+    }
 
+    public User getUser() {
+        return user;
+    }
 }
