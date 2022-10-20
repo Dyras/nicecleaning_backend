@@ -1,8 +1,8 @@
 package se.stadafint.nicecleaning_backend.services;
 
 import org.springframework.stereotype.Service;
-import se.stadafint.nicecleaning_backend.entities.Clean;
-import se.stadafint.nicecleaning_backend.entities.User;
+import se.stadafint.nicecleaning_backend.model.Clean;
+import se.stadafint.nicecleaning_backend.model.User;
 import se.stadafint.nicecleaning_backend.repo.CleanRepo;
 
 import java.sql.Time;

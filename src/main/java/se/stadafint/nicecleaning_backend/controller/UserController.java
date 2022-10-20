@@ -1,6 +1,6 @@
 package se.stadafint.nicecleaning_backend.controller;
 
-import se.stadafint.nicecleaning_backend.entities.User;
+import se.stadafint.nicecleaning_backend.model.User;
 import org.springframework.web.bind.annotation.*;
 import se.stadafint.nicecleaning_backend.services.UserService;
 

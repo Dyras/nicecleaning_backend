@@ -1,4 +1,4 @@
-package se.stadafint.nicecleaning_backend.entities;
+package se.stadafint.nicecleaning_backend.model;
 
 import javax.persistence.*;
 import java.util.List;
