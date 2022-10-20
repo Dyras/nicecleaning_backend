@@ -4,11 +4,12 @@ import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
 
+@Entity
 public class Clean {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(nullable = false)
     private Date date;
@@ -25,7 +26,7 @@ public class Clean {
     @ManyToOne
     private User user;
 
-    public Clean(Long id, Date date, Time time, String optionalDescription, boolean completed, User user) {
+    public Clean(int id, Date date, Time time, String optionalDescription, boolean completed, User user) {
         this.id = id;
         this.date = date;
         this.time = time;

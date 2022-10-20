@@ -3,7 +3,7 @@ package se.stadafint.nicecleaning_backend.model;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
-
+@Entity
 public class User {
 
     @Id
@@ -16,7 +16,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "User", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Clean> cleans;
 
     public User(String email, String password) {
