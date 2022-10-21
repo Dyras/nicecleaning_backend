@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-public class User {
+public class SiteUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,15 +17,15 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "siteUser", cascade = CascadeType.ALL)
     private List<Clean> cleans;
 
-    public User(String email, String password) {
+    public SiteUser(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
-    public User() {
+    public SiteUser() {
 
     }
 

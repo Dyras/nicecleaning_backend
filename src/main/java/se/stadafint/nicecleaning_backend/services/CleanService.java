@@ -2,7 +2,7 @@ package se.stadafint.nicecleaning_backend.services;
 
 import org.springframework.stereotype.Service;
 import se.stadafint.nicecleaning_backend.model.Clean;
-import se.stadafint.nicecleaning_backend.model.User;
+import se.stadafint.nicecleaning_backend.model.SiteUser;
 import se.stadafint.nicecleaning_backend.repo.CleanRepo;
 
 import java.sql.Time;
@@ -26,7 +26,7 @@ public class CleanService {
     }
 
     public Clean addClean(Date date, Time time){
-    return cleanRepo.save(new Clean(date, time, false, (new User("Batman", "superman"))));
+    return cleanRepo.save(new Clean(date, time, false, (new SiteUser("Batman", "superman"))));
     }
 
     public Clean cleanDuplicateCheck(Date date, int id) {

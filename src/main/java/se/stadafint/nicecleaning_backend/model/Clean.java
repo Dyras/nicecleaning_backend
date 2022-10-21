@@ -21,13 +21,13 @@ public class Clean {
     private boolean completed = false;
 
     @ManyToOne
-    private User user;
+    private SiteUser siteUser;
 
-    public Clean(Date date, Time time, boolean completed, User user) {
+    public Clean(Date date, Time time, boolean completed, SiteUser siteUser) {
         this.date = date;
         this.time = time;
         this.completed = completed;
-        this.user = user;
+        this.siteUser = siteUser;
     }
 
     public Clean(){
@@ -49,7 +49,7 @@ public class Clean {
         return completed;
     }
 
-    public User getUser() {
-        return user;
+    public SiteUser getUser() {
+        return siteUser;
     }
 }

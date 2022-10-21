@@ -3,10 +3,10 @@ package se.stadafint.nicecleaning_backend.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import se.stadafint.nicecleaning_backend.model.User;
+import se.stadafint.nicecleaning_backend.model.SiteUser;
 
 @Repository
-public interface UserRepo extends JpaRepository<User, Integer> {
+public interface SiteUserRepo extends JpaRepository<SiteUser, Integer> {
 
-    User findUserById(int id);
+    SiteUser findUserById(int id);
 }
