@@ -13,11 +13,7 @@ public class AppUserService {
         this.appUserRepo = appUserRepo;
     }
 
-    public AppUser findUserById(int id) {
-        return appUserRepo.findSiteUserById(id);
-    }
-
-    public AppUser findUserByEmail(String email){
-        return appUserRepo.findSiteUserByEmailIgnoreCase(email);
+    public AppUser findAppUserByEmail(String email){
+        return appUserRepo.findAppUserByEmailIgnoreCase(email);
     }
 }

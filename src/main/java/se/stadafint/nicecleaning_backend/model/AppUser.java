@@ -19,7 +19,7 @@ public class AppUser {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "siteUser", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
     private List<Clean> cleans;
 
     public AppUser(String email, String password) {

@@ -8,7 +8,5 @@ import se.stadafint.nicecleaning_backend.model.AppUser;
 @Repository
 public interface AppUserRepo extends JpaRepository<AppUser, Integer> {
 
-    AppUser findSiteUserById(int id);
-
-    AppUser findSiteUserByEmailIgnoreCase(String email);
+    AppUser findAppUserByEmailIgnoreCase(String email);
 }
