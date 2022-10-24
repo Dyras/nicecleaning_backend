@@ -1,11 +1,13 @@
 package se.stadafint.nicecleaning_backend.model;
 
+import se.stadafint.nicecleaning_backend.dto.AppUserResponseDTO;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
-public class SiteUser {
+public class AppUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,13 +22,17 @@ public class SiteUser {
     @OneToMany(mappedBy = "siteUser", cascade = CascadeType.ALL)
     private List<Clean> cleans;
 
-    public SiteUser(String email, String password) {
+    public AppUser(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
-    public SiteUser() {
+    public AppUser() {
 
+    }
+
+    public AppUserResponseDTO toResponseDTO(){
+        return new AppUserResponseDTO(id, email);
     }
 
     @Override

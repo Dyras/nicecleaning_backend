@@ -20,14 +20,18 @@ public class Clean {
     @Column(nullable = false)
     private boolean completed = false;
 
-    @ManyToOne
-    private SiteUser siteUser;
+    @Column
+    private int cleanerId = 0;
 
-    public Clean(Date date, Time time, boolean completed, SiteUser siteUser) {
+    @ManyToOne
+    private AppUser appUser;
+
+    public Clean(Date date, Time time, boolean completed, AppUser appUser, int cleanerId) {
         this.date = date;
         this.time = time;
         this.completed = completed;
-        this.siteUser = siteUser;
+        this.appUser = appUser;
+        this.cleanerId = cleanerId;
     }
 
     public Clean(){
@@ -49,7 +53,7 @@ public class Clean {
         return completed;
     }
 
-    public SiteUser getUser() {
-        return siteUser;
+    public AppUser getUser() {
+        return appUser;
     }
 }

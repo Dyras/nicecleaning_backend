@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import se.stadafint.nicecleaning_backend.repo.CleanRepo;
-import se.stadafint.nicecleaning_backend.repo.SiteUserRepo;
+import se.stadafint.nicecleaning_backend.repo.AppUserRepo;
 
 @SpringBootApplication
 public class NicecleaningBackendApplication {
@@ -13,7 +13,7 @@ public class NicecleaningBackendApplication {
     CleanRepo cleanRepo;
 
     @Autowired
-    SiteUserRepo siteUserRepo;
+    AppUserRepo appUserRepo;
 
     public static void main(String[] args) {
         SpringApplication.run(NicecleaningBackendApplication.class, args);
