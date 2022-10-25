@@ -1,13 +1,9 @@
 package se.stadafint.nicecleaning_backend.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import se.stadafint.nicecleaning_backend.model.Clean;
-
-import java.util.Date;
-import java.util.List;
+import se.stadafint.nicecleaning_backend.entities.Clean;
 
 public interface CleanRepo extends JpaRepository<Clean, Integer> {
 
-
-    Clean findCleanByDateAndId(Date date, int id);
+    Clean findCleanByDateAndId(String date, int id);
 }

@@ -1,4 +1,4 @@
-package se.stadafint.nicecleaning_backend.model;
+package se.stadafint.nicecleaning_backend.entities;
 
 import se.stadafint.nicecleaning_backend.dto.AppUserResponseDTO;
 
@@ -28,7 +28,6 @@ public class AppUser {
     }
 
     public AppUser() {
-
     }
 
     public AppUserResponseDTO toResponseDTO(){
@@ -40,8 +39,16 @@ public class AppUser {
         return Objects.hash(id);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AppUser appUser)) return false;
+        return getId() == appUser.getId();
+    }
+
     public int getId() {
         return id;
     }
+
 
 }

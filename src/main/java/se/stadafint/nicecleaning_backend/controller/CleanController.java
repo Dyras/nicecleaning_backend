@@ -1,13 +1,12 @@
 package se.stadafint.nicecleaning_backend.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import se.stadafint.nicecleaning_backend.model.Clean;
+import org.springframework.web.bind.annotation.*;
+import se.stadafint.nicecleaning_backend.dto.CleanResponseDTO;
+import se.stadafint.nicecleaning_backend.dto.CreateCleanDTO;
+import se.stadafint.nicecleaning_backend.entities.Clean;
 import se.stadafint.nicecleaning_backend.services.CleanService;
 
-import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/clean")
@@ -20,7 +19,30 @@ public class CleanController {
         this.cleanService = cleanService;
     }
 
-    public Clean cleanDuplicateCheck(Date date, int id){
+    @PostMapping
+    public CreateCleanDTO addClean(@RequestBody() CreateCleanDTO createCleanDTO){
+        return cleanService
+                .addClean(
+                        createCleanDTO.date(),
+                        createCleanDTO.time(),
+                        createCleanDTO.optionalMessage(),
+                        createCleanDTO.getId()
+                )
+                .toResponseDTO();
+    }
+
+@GetMapping
+    public List<CleanResponseDTO> findAll(
+            @RequestParam(required = false, defaultValue = "", name = "tcon") String contains
+    ){
+        return cleanService.findAll(contains)
+                .stream()
+                .map(Clean::toResponseDTO)
+                .toList();
+    }
+
+
+    public Clean cleanDuplicateCheck(String date, int id){
         return cleanService.cleanDuplicateCheck(date, id);
     }
 }
