@@ -19,18 +19,18 @@ public class CleanController {
         this.cleanService = cleanService;
     }
 
-    @PostMapping
-    public CreateCleanDTO addClean(@RequestBody() CreateCleanDTO createCleanDTO){
-        return cleanService
-                .addClean(
-                        createCleanDTO.date(),
-                        createCleanDTO.time(),
-                        createCleanDTO.optionalMessage(),
-                        createCleanDTO.getId()
-                )
-                .toResponseDTO();
-    }
-
+    /*  @PostMapping
+       public CreateCleanDTO addClean(@RequestBody() CreateCleanDTO createCleanDTO){
+          return cleanService
+                  .addClean(
+                          createCleanDTO.date(),
+                          createCleanDTO.time(),
+                          createCleanDTO.optionalMessage(),
+                          createCleanDTO.getId()
+                  )
+                  .toResponseDTO();
+      }
+  */
 @GetMapping
     public List<CleanResponseDTO> findAll(
             @RequestParam(required = false, defaultValue = "", name = "tcon") String contains

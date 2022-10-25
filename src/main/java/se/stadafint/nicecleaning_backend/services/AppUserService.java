@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 import se.stadafint.nicecleaning_backend.entities.AppUser;
 import se.stadafint.nicecleaning_backend.repo.AppUserRepo;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class AppUserService {
     private final AppUserRepo appUserRepo;
@@ -13,7 +16,13 @@ public class AppUserService {
         this.appUserRepo = appUserRepo;
     }
 
-    public AppUser findAppUserByEmail(String email){
+    public List<AppUser> findAll() {
+        return appUserRepo.findAll();
+    }
+
+    public Optional<AppUser> findAppUserByEmail(String email){
         return appUserRepo.findAppUserByEmailIgnoreCase(email);
     }
+
+
 }

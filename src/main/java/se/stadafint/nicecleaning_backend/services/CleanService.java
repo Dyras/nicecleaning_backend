@@ -6,8 +6,6 @@ import se.stadafint.nicecleaning_backend.entities.Clean;
 import se.stadafint.nicecleaning_backend.repo.AppUserRepo;
 import se.stadafint.nicecleaning_backend.repo.CleanRepo;
 
-import java.sql.Time;
-import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -16,8 +14,9 @@ public class CleanService {
     private final AppUserRepo appUserRepo;
 
 
-    public CleanService(CleanRepo cleanRepo) {
+    public CleanService(CleanRepo cleanRepo, AppUserRepo appUserRepo) {
         this.cleanRepo = cleanRepo;
+        this.appUserRepo = appUserRepo;
     }
 
     public List<Clean> findAll(String contains) {

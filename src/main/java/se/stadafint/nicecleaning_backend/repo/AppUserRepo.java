@@ -10,8 +10,5 @@ import java.util.Optional;
 @Repository
 public interface AppUserRepo extends JpaRepository<AppUser, Integer> {
 
-
-    Optional<AppUser> findAppUsersByUsernameIgnoreCase(String username);
-
-    AppUser findAppUserByEmailIgnoreCase(String email);
+    Optional<AppUser> findAppUserByEmailIgnoreCase(String email);
 }
