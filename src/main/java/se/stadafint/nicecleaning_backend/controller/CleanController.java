@@ -2,7 +2,6 @@ package se.stadafint.nicecleaning_backend.controller;
 
 import org.springframework.web.bind.annotation.*;
 import se.stadafint.nicecleaning_backend.dto.CleanResponseDTO;
-import se.stadafint.nicecleaning_backend.dto.CreateCleanDTO;
 import se.stadafint.nicecleaning_backend.entities.Clean;
 import se.stadafint.nicecleaning_backend.services.CleanService;
 

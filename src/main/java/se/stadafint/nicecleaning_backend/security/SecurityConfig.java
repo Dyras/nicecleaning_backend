@@ -2,6 +2,7 @@ package se.stadafint.nicecleaning_backend.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -31,7 +32,7 @@ public class SecurityConfig {
         httpSecurity
                 .csrf().disable()
                 .authorizeRequests(auth -> auth
-                        .antMatchers("api/user/**").hasRole(Role.ADMIN.toString())
+                       .antMatchers(HttpMethod.GET, "/api/user").hasRole(Role.ADMIN.toString())
                         .anyRequest().authenticated()
                 )
                 .userDetailsService(userDetailsService)

@@ -50,7 +50,7 @@ public class AppUser implements UserDetails {
     }
 
     public AppUserResponseDTO toResponseDTO(){
-        return new AppUserResponseDTO(id, email);
+        return new AppUserResponseDTO(id, email, roles.toString());
     }
 
     @Override
@@ -72,12 +72,16 @@ public class AppUser implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return email;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
     }
 
     @Override
