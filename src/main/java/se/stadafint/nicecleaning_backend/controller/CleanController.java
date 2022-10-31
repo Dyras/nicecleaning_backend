@@ -48,7 +48,13 @@ public class CleanController {
 
     @PutMapping("/{id}")
     public void unscheduleClean(@PathVariable int id){
-        System.out.println("Test");
+        System.out.println("unscheduleClean run successfully");
         cleanService.unscheduleClean(id);
+    }
+
+    @PutMapping("/{id}/reschedule")
+    public void rescheduleClean(@RequestBody() CreateCleanDTO createCleanDTO){
+        System.out.println("rescheduleClean run successfully");
+        cleanService.rescheduleClean(createCleanDTO);
     }
 }

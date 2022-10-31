@@ -1,6 +1,7 @@
 package se.stadafint.nicecleaning_backend.services;
 
 import org.springframework.stereotype.Service;
+import se.stadafint.nicecleaning_backend.dto.CreateCleanDTO;
 import se.stadafint.nicecleaning_backend.entities.AppUser;
 import se.stadafint.nicecleaning_backend.entities.Clean;
 import se.stadafint.nicecleaning_backend.repo.AppUserRepo;
@@ -37,10 +38,17 @@ public class CleanService {
         }
 
     public void unscheduleClean(int id) {
-        Clean clean = cleanRepo.getReferenceById(id);
+        Clean clean = findById(id);
         clean.setStatus(8);
-        System.out.println("Hmm");
         cleanRepo.save(clean);
 
+    }
+
+    public void rescheduleClean(CreateCleanDTO createCleanDTO) {
+        Clean clean = findById(createCleanDTO.id());
+        clean.setDate(createCleanDTO.date());
+        clean.setTime(createCleanDTO.time());
+        clean.setStatus(0);
+        clean.setCleanerId(0);
     }
 }

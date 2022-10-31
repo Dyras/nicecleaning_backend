@@ -3,6 +3,7 @@ package se.stadafint.nicecleaning_backend.services;
 
 import org.springframework.stereotype.Service;
 import se.stadafint.nicecleaning_backend.entities.AppUser;
+import se.stadafint.nicecleaning_backend.entities.Clean;
 import se.stadafint.nicecleaning_backend.repo.AppUserRepo;
 
 import java.util.List;
@@ -23,6 +24,8 @@ public class AppUserService {
     public Optional<AppUser> findAppUserByEmail(String email){
         return appUserRepo.findAppUserByEmailIgnoreCase(email);
     }
-
+    public AppUser findById(int id){
+        return appUserRepo.findById(id).orElseThrow();
+    }
 
 }

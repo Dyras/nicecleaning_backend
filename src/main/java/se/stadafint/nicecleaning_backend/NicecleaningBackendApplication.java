@@ -33,9 +33,9 @@ public class NicecleaningBackendApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         try{
-            Optional<AppUser> optionalUser = appUserService.findAppUserByEmail("johan.forsberg@my.com");
-            AppUser appUser = optionalUser.get();
-            cleanRepo.save(new Clean("2022-10-31", "10:2", "Hej grupp 1!", 0, 0, appUser));
+           // Optional<AppUser> optionalUser = appUserService.findAppUserByEmail("johan.forsberg@my.com");
+           // AppUser appUser = optionalUser.get();
+           // cleanRepo.save(new Clean("2022-10-31", "10:2", "Hej grupp 1!", 0, 0, appUser));
         }catch (DataIntegrityViolationException err )  {
             System.out.println(err.getMessage());
         }
