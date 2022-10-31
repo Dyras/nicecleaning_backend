@@ -21,6 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
        AppUser appUser = appUserRepo.findAppUserByEmailIgnoreCase(username).orElseThrow();
         System.out.println(appUser.getUsername());
         System.out.println(appUser.getPassword());
+        System.out.println(appUser.getId());
         return appUser;
     }
 }

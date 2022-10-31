@@ -36,4 +36,11 @@ public class CleanService {
         return cleanRepo.findCleanByDateAndId(date, id);
         }
 
+    public void unscheduleClean(int id) {
+        Clean clean = cleanRepo.getReferenceById(id);
+        clean.setStatus(7);
+        System.out.println("Hmm");
+        cleanRepo.save(clean);
+
     }
+}

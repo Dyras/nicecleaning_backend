@@ -23,7 +23,9 @@ public class Clean {
 
     @Column(nullable = false)
     // Visar vilken status som städningen har.
-    // 0 är aktiv, ännu ej klar. 1 är avklarad, 2 är inställd, 3 är godkänd, 4 är underkänd.
+    // 0 är obekräftad, 1 är bekräftad, 2 är bokad
+    // 3 är under utförande, 4 är utfört 5 är godkänt
+    // 6 är fakturerad, 7 är betald, 8 är avbokad
     private int status = 0;
 
     @Column
@@ -31,9 +33,11 @@ public class Clean {
     private int cleanerId = 0;
 
     @Column
+    // Ett valfritt meddelande till städaren
     private String optionalMessage;
 
     @ManyToOne
+    // Vilken användare som bokade städningen
     private AppUser appUser;
 
     public Clean(String date, String time, String optionalMessage, int cleanerId, int status, AppUser appUser) {
@@ -72,5 +76,31 @@ public class Clean {
         return appUser;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public void setCleanerId(int cleanerId) {
+        this.cleanerId = cleanerId;
+    }
+
+    public void setOptionalMessage(String optionalMessage) {
+        this.optionalMessage = optionalMessage;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
+    }
 }
