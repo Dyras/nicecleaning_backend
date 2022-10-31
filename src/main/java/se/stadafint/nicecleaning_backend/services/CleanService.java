@@ -38,7 +38,7 @@ public class CleanService {
 
     public void unscheduleClean(int id) {
         Clean clean = cleanRepo.getReferenceById(id);
-        clean.setStatus(7);
+        clean.setStatus(8);
         System.out.println("Hmm");
         cleanRepo.save(clean);
 
